@@ -1,0 +1,127 @@
+@import "vars"
+@import "mixins"
+
+@media screen and (max-width: 992px)
+  html
+    font-size: 14px
+
+  header
+    .navigation
+      position: relative
+      width: 100%
+      height: 50px
+
+  .logo
+    margin: 1em 0 0 1em
+
+  .burger
+    margin-right: 2em
+    display: flex
+    justify-content: center
+
+  .check
+    visibility: hidden
+    position: absolute
+
+    + label
+      position: relative
+      display: inline-block
+      width: 50px
+      height: 50px
+      border-radius: 5px
+      cursor: pointer
+
+      span
+        content: ""
+        position: absolute
+        width: 45px
+        height: 5px
+        background-color: white
+        border-radius: 3px
+        transition: all .5s ease
+        transform-origin: top
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+        &:before, &:after
+          content: ""
+          position: absolute
+          width: 45px
+          height: 5px
+          background-color: white
+          border-radius: 3px
+          transition: all .5s ease
+          transform-origin: top
+
+        &:before
+          top: calc(50% - 15px)
+
+        &:after
+          top: calc(50% + 10px)
+
+    &:checked + label span
+      background-color: transparent
+
+      &:before
+        top: 50%
+        transform: rotate(45deg) translateY(-50%)
+
+      &:after
+        top: 50%
+        transform: rotate(-45deg) translateY(-50%)
+
+
+
+  .burger-list
+    display: block
+    position: absolute
+    bottom: 0
+    margin-right: 2em
+    max-height: 0
+    transform: translateY(100%)
+    overflow: hidden
+    transition: .5s all
+    z-index: 100
+
+    ul
+      display: block
+
+      li a
+        display: block
+        padding: 0.8rem
+        width: 100%
+        text-align: center
+        font-weight: 500
+        text-decoration: none
+        letter-spacing: 0.3rem
+        border-radius: 21px
+        background: linear-gradient(to right, rgba(135, 211, 205, 0.8), rgba(109, 69, 225, 0.8))
+
+  .navigation nav ul li a:not(.button):hover
+    text-decoration: underline
+
+  #check-menu:checked ~ .burger-list
+    max-height: 500px
+
+  .variants
+    flex-wrap: wrap
+
+  .price
+    max-width: 50%
+    flex: 1 1 50%
+
+  .control
+    h2
+      padding: 1em
+
+  footer
+    nav
+      display: none
+
+    .navigation
+      flex-direction: column-reverse
+
+      p
+        padding-top: 1.5em
+        text-align: center

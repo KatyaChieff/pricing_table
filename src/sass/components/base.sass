@@ -1,0 +1,87 @@
+@import "vars"
+@import "mixins"
+
+#select-price
+  div > h4
+    &::before
+      @include headlines($purple)
+      left: 5rem
+
+    &::after
+      @include headlines($purple)
+      right: 5rem
+
+  div > p
+    color: $grey
+
+.variants
+  margin: 0 auto
+  display: flex
+  justify-content: space-around
+  max-width: 85%
+
+  .button
+    @include button($grey)
+    box-shadow: 0 0 1em $purple
+
+.price
+  margin: 1em
+  padding: 2.5em
+  display: flex
+  flex-direction: column
+  align-items: center
+  min-width: 250px
+  max-width: 33.333%
+  flex: 1 1 33.333%
+  text-align: center
+  border: 1px solid $lightgrey
+  border-radius: 20px
+
+  figure > p
+    height: 9em
+
+  > p
+    padding: 2em 0
+    flex: 1 1 auto
+    font-size: 1rem
+    font-weight: 500
+    line-height: 1.8rem
+
+  &:hover
+    border-color: transparent
+    box-shadow: 0 0 2em $purple
+    transition: .2s
+    cursor: pointer
+
+.price_big
+  font-size: 0.9rem
+  font-weight: 500
+  color: $purple
+
+  span
+    font-size: 3em
+    font-weight: 500
+
+    &::before
+      content: "$"
+      position: relative
+      top: -1em
+      font-size: 1rem
+
+.control
+  padding: 6em
+  color: $white
+  background: $bpgradient, url("../../img/map.jpg") no-repeat center (top / cover)
+
+  .button
+    @include button($grey)
+    display: inline-block
+    margin: 2em 0.5em
+    background-color: $white
+
+.button:hover
+  @include button($white)
+  background-color: $btnpurple
+  border-color: transparent
+  transition: .2s
+

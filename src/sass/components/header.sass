@@ -1,0 +1,107 @@
+@import "vars"
+@import "mixins"
+
+header
+  color: $white
+  background: $bpgradient, url("../../img/glasses.jpg") no-repeat center (top / cover)
+
+  a
+    color: $white
+
+  .button
+    @include button($white)
+
+  h4
+    &::before, &::after
+      @include headlines($white)
+
+    &::before
+      left: -2rem
+
+    &::after
+      right: -2rem
+
+.navigation
+  display: flex
+  padding: 1.5em
+  justify-content: space-between
+  align-items: center
+
+  p
+    color: $grey
+
+  nav ul li a:not(.button):hover
+    text-decoration: underline
+    text-shadow: 0 0 2em $white
+    transition: .2s
+
+.logo
+  position: relative
+  display: flex
+  align-items: center
+  text-transform: uppercase
+
+  a
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+
+  span
+    padding-left: 0.5em
+    font-size: 26px
+    font-weight: bold
+    letter-spacing: 0.3rem
+
+  &:hover
+    text-shadow: 0 0 2em $white
+    transform: scale(1.01)
+    transition: .2s
+
+#check-menu
+  display: none
+
+.analytics
+  margin: 4em auto
+  padding: 1.5em
+  text-align: center
+  color: $white
+
+  h4:not(.select)
+    color: $white
+
+  p
+    margin: 0 auto
+    padding-top: 2em
+    max-width: 25em
+    text-align: center
+    font-size: 1rem
+    line-height: 1.8rem
+
+.anchor
+  display: flex
+  padding: 2em
+  justify-content: center
+
+.circle
+  position: relative
+  width: 65px
+  height: 65px
+  margin-bottom: 2em
+  padding: 1.5em
+  text-align: center
+  border-radius: 50%
+  background-color: $white
+
+  &:hover
+    box-shadow: 0 0 2em $white
+    transform: translateY(1em)
+    transition: .2s
+
+.fa-arrow-down:before
+  content: "\f063"
+  top: calc(50% + 1px)
+  position: absolute
+  left: 50%
+  transform: translate(-50%, -50%)

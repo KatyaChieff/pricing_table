@@ -1,0 +1,25 @@
+header
+    .navigation
+        .logo
+            a(href='/')
+            img(src='img/symbol.png' alt='logo')
+            span misocial
+        .burger
+            input#check-menu.check(type='checkbox')
+            label(for='check-menu')
+                span
+            nav.burger-list
+                ul
+                    each name in [`Home`, `Why MISOCIAL`,`Features`, `Articles`, `Pricing`]
+                        li
+                            a(href='#')= name
+                    li
+                        a.button(href='#') GET STARTED
+    .analytics
+        h4  SOCIAL MARKETING &amp; ANALYTICS
+        h1 Pricing Table
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eos expedita.
+    .anchor
+        a(href='#select-price')
+            .circle
+                i.fas.fa-arrow-down

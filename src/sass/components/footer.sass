@@ -1,0 +1,39 @@
+@import "vars"
+@import "mixins"
+
+footer
+  margin-top: -2em
+
+  .navigation
+    border-bottom: 1px solid $lightgrey
+
+    > ul li:hover
+      transform: scale(1.1)
+      transition: .2s
+
+    nav ul li a:not(.button):hover
+      transition: .2s
+      color: $btnpurple
+
+  nav ul li a
+    color: $grey
+
+  .button
+    @include button($white)
+    background-color: $btnpurple
+    border-color: transparent
+
+    &:hover
+      @include button($grey)
+      background-color: transparent
+      box-shadow: 0 0 1em $purple
+      transition: .2s
+
+
+
+  .logo
+    color: #37374a
+
+    &:hover
+      text-shadow: 0 0 2em $purple
+      transform: scale(1.01)
